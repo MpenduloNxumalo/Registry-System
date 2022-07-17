@@ -1,0 +1,82 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/horizontalScrollView"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+		>
+
+	<ImageView
+		android:id="@+id/rectangle_1"
+		android:layout_width="468dp"
+		android:layout_height="533dp"
+		android:contentDescription="rectangle_1"
+		android:src="@drawable/rectangle_1"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<ImageView
+		android:id="@+id/rectangle_2"
+		android:layout_width="429dp"
+		android:layout_height="596dp"
+		android:contentDescription="rectangle_2"
+		android:src="@drawable/rectangle_2"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent" />
+
+
+	<ImageView
+		android:id="@+id/vector"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="40dp"
+		android:contentDescription="vector"
+		android:src="@drawable/vector"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<TextView
+		android:id="@+id/textView"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="100dp"
+		android:layout_marginTop="30dp"
+		android:layout_marginEnd="100dp"
+		android:fontFamily="@font/montserrat_variablefont_wght"
+		android:gravity="center"
+		android:text="FaceRapp"
+		android:textColor="#08A1F6"
+		android:textSize="25sp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/vector" />
+
+	<Button
+		android:id="@+id/button"
+		style="@style/BtnStyle"
+		android:textColor="#FFF"
+		android:layout_marginBottom="60dp"
+		android:background="@drawable/strokebtn"
+		android:text="Clocking List"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent" />
+
+	<Button
+		android:id="@+id/button2"
+		style="@style/BtnStyle"
+		android:text="Create Register"
+		android:textColor="#08A1F6"
+		android:textFontWeight="900"
+		android:background="@drawable/btnradius"
+		app:layout_constraintBottom_toTopOf="@+id/button"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

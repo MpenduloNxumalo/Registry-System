@@ -1,0 +1,115 @@
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent" android:layout_height="wrap_content" >
+	<!-- 
+	/*
+	 *	This content is generated from the API File Info.
+	 *	(Alt+Shift+Ctrl+I).
+	 *
+	 *	@desc 		
+	 *	@file 		homescreen
+	 *	@date 		Sunday 17th of July 2022 09:16:15 AM
+	 *	@title 		Client Screens
+	 *	@author 	
+	 *	@keywords 	
+	 *	@generator 	Export Kit v1.3.figma
+	 *
+	 */
+	-->
+	<ScrollView android:id="@+id/exportscreen" 
+		android:layout_width="wrap_content" 
+		android:layout_height="match_parent" >
+
+		<RelativeLayout android:id="@+id/content_container" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content" >
+
+
+
+
+
+			<RelativeLayout android:id="@+id/page_exportscreen_ek1"
+				android:layout_marginTop="0dp"
+				android:layout_marginStart="0dp"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				>
+
+				<View   android:id="@+id/_bg__exportscreen_ek2"
+					android:background="@drawable/_bg__exportscreen_ek2_shape"
+					 android:layout_marginStart="0dp"
+					android:layout_marginTop="0dp"
+					android:layout_width="375dp"
+					android:layout_height="812dp" />
+
+
+				<RelativeLayout android:id="@+id/frame_1_ek4"
+					android:layout_marginTop="40dp"
+					android:layout_marginStart="163dp"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					>
+
+					<ImageView android:id="@+id/vector_ek8"
+						android:src="@drawable/vector_ek8"
+						android:contentDescription="vector_ek8"
+						 android:layout_marginStart="0dp"
+						android:layout_marginTop="0dp"
+						android:layout_width="49dp"
+						android:layout_height="48dp" />
+
+				</RelativeLayout>
+
+
+				<RelativeLayout android:id="@+id/my_button_ek3"
+					android:layout_marginTop="614dp"
+					android:layout_marginStart="29dp"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					>
+
+					<View   android:id="@+id/rectangle_3_ek3"
+						android:background="@drawable/rectangle_3_ek3_shape"
+						 android:layout_marginStart="0dp"
+						android:layout_marginTop="0dp"
+						android:layout_width="308dp"
+						android:layout_height="56dp" />
+
+					<TextView android:id="@+id/export_report"
+						android:fontFamily="Montserrat"
+						android:textStyle="bold"
+						android:layout_gravity="center_horizontal|center"
+						android:gravity="center"
+						android:textSize="20sp"
+						android:textColor="@color/create_new_register_color"
+						android:layout_marginLeft="75dp"
+						android:layout_marginTop="15dp"
+						android:layout_width="163dp"
+						android:layout_height="38dp"
+						android:text="@string/export_report_string"
+						 />
+
+				</RelativeLayout>
+
+				<View   android:id="@+id/rectangle_7_ek1"
+					android:background="@drawable/rectangle_7_ek1_shape"
+					 android:alpha="0.1"
+					 android:layout_marginStart="81dp"
+					android:layout_marginTop="167dp"
+					android:layout_width="100dp"
+					android:layout_height="101dp" />
+
+				<ImageView android:id="@+id/f6188_school_attendance_register_inside_form_rbe_1"
+					android:src="@drawable/f6188_school_attendance_register_inside_form_rbe_1"
+					android:contentDescription="f6188_school_attendance_register_inside_form_rbe_1"
+					 android:layout_marginStart="46dp"
+					android:layout_marginTop="118dp"
+					android:layout_width="284dp"
+					android:layout_height="457dp" />
+
+			</RelativeLayout>
+
+
+		</RelativeLayout>
+
+	</ScrollView>
+</HorizontalScrollView>
