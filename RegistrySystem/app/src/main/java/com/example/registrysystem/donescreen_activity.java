@@ -42,7 +42,7 @@ public class donescreen_activity extends Activity {
 		setContentView(R.layout.donescreen);
 
 		
-		_bg__donescreen_ek2 = (View) findViewById(R.id._bg__donescreen_ek2);
+
 		vector_ek9 = (ImageView) findViewById(R.id.vector_ek9);
 		rectangle_3_ek4 = (View) findViewById(R.id.rectangle_3_ek4);
 		done = (TextView) findViewById(R.id.done);

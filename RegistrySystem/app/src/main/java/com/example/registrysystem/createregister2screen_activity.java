@@ -17,44 +17,51 @@
 
 package com.example.registrysystem;
 
+import android.Manifest;
 import android.app.Activity;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 
 
+import android.os.Environment;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class createregister2screen_activity extends Activity {
+import androidx.core.app.ActivityCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-	
-	private View _bg__createregister2screen_ek2;
+import org.apache.poi.hssf.usermodel.HSSFCell;
+import org.apache.poi.hssf.usermodel.HSSFRow;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+
+import java.io.File;
+import java.io.FileOutputStream;
+
+import utils.RegistryAdapter;
+
+	public class createregister2screen_activity extends Activity {
+
+
 	private ImageView vector_ek7;
-	private View rectangle_3_ek2;
-	private TextView generate_report;
-	private View rectangle_7;
-	private View rectangle_8;
-	private TextView name;
-	private TextView surname;
-	private TextView grade_10_b_register;
-	private TextView mpendulo_ek12;
-	private TextView mpendulo_ek13;
-	private TextView john;
-	private TextView john_ek1;
-	private TextView herman;
-	private TextView herman_ek1;
-	private TextView herman_ek2;
-	private TextView herman_ek3;
-	private TextView nxumalo_ek12;
-	private TextView nxumalo_ek13;
-	private TextView smith;
-	private TextView smith_ek1;
-	private TextView maseko;
-	private TextView maseko_ek1;
-	private TextView maseko_ek2;
-	private TextView maseko_ek3;
-	private TextView clocking_list_ek1;
-	private ImageView rectangle_4_ek2;
+	public String grade;
+	public String Class;
+
+	public TextView classRegisterName;
+	String Name[], Surname[];
+	Button generateReport, clockingList;
+
+	RecyclerView registerRecyclerView;
+
+	String s = Environment.getExternalStorageDirectory() + "/A.xls";
+
+	private File filePath = new File(s);
+
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -62,38 +69,96 @@ public class createregister2screen_activity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.createregister2screen);
 
-		
-		_bg__createregister2screen_ek2 = (View) findViewById(R.id._bg__createregister2screen_ek2);
-		vector_ek7 = (ImageView) findViewById(R.id.vector_ek7);
-		rectangle_3_ek2 = (View) findViewById(R.id.rectangle_3_ek2);
-		generate_report = (TextView) findViewById(R.id.generate_report);
-		rectangle_7 = (View) findViewById(R.id.rectangle_7);
-		rectangle_8 = (View) findViewById(R.id.rectangle_8);
-		name = (TextView) findViewById(R.id.name);
-		surname = (TextView) findViewById(R.id.surname);
-		grade_10_b_register = (TextView) findViewById(R.id.grade_10_b_register);
-		mpendulo_ek12 = (TextView) findViewById(R.id.mpendulo_ek12);
-		mpendulo_ek13 = (TextView) findViewById(R.id.mpendulo_ek13);
-		john = (TextView) findViewById(R.id.john);
-		john_ek1 = (TextView) findViewById(R.id.john_ek1);
-		herman = (TextView) findViewById(R.id.herman);
-		herman_ek1 = (TextView) findViewById(R.id.herman_ek1);
-		herman_ek2 = (TextView) findViewById(R.id.herman_ek2);
-		herman_ek3 = (TextView) findViewById(R.id.herman_ek3);
-		nxumalo_ek12 = (TextView) findViewById(R.id.nxumalo_ek12);
-		nxumalo_ek13 = (TextView) findViewById(R.id.nxumalo_ek13);
-		smith = (TextView) findViewById(R.id.smith);
-		smith_ek1 = (TextView) findViewById(R.id.smith_ek1);
-		maseko = (TextView) findViewById(R.id.maseko);
-		maseko_ek1 = (TextView) findViewById(R.id.maseko_ek1);
-		maseko_ek2 = (TextView) findViewById(R.id.maseko_ek2);
-		maseko_ek3 = (TextView) findViewById(R.id.maseko_ek3);
-		clocking_list_ek1 = (TextView) findViewById(R.id.clocking_list_ek1);
-		rectangle_4_ek2 = (ImageView) findViewById(R.id.rectangle_4_ek2);
+		ActivityCompat.requestPermissions(this,
+				new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,
+				Manifest.permission.READ_EXTERNAL_STORAGE},
+				PackageManager.PERMISSION_GRANTED);
+		Intent intent = getIntent();
+
+		grade = intent.getStringExtra("grade");
+		Class = intent.getStringExtra("class");
+
+		classRegisterName = findViewById(R.id.register_name);
+
+		String name = "Grade "+grade+" "+Class+" register";
+		classRegisterName.setText(name);
+
+
+		Name = new String[]{"Mpendulo", "Jabulani", "Herman", "Thami", "Steve"};//getResources().getStringArray(R.array.Name);
+		Surname = new String[]{"Nxumalo", "Maseko", "Maseko", "Buthelezi", "Sephiri"};
+
+		registerRecyclerView = findViewById(R.id.register_recyclerview);
+		RegistryAdapter adapter = new RegistryAdapter(this,Name,Surname);
+		registerRecyclerView.setAdapter(adapter);
+		registerRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+		generateReport = findViewById(R.id.generate_report);
+
+		generateReport.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				Toast.makeText(getApplicationContext(),s,Toast.LENGTH_LONG).show();
+				buttonCreateExcel(view);
+				Toast.makeText(getApplicationContext(),"Report Generated",Toast.LENGTH_LONG).show();
+			}
+		});
+
+
+
+
+
+
+
 	
 		
 		//custom code goes here
 	
+	}
+
+	public void buttonCreateExcel(View view){
+		HSSFWorkbook workbook = new HSSFWorkbook();
+		HSSFSheet sheet =  workbook.createSheet();
+
+		for(int i = 0;i < 2;i++){
+			for(int j = 0;j < Name.length;j++){
+				HSSFRow row = sheet.createRow(i);
+				HSSFCell cell = row.createCell(j);
+
+
+				if(i == 0){
+					cell.setCellValue(Name[j]);
+				}
+				else{
+					cell.setCellValue(Surname[j]);
+				}
+
+			}
+		}
+
+
+
+
+		try{
+			if(!filePath.exists()){
+				filePath.createNewFile();
+				Toast.makeText(getApplicationContext(),"file",Toast.LENGTH_SHORT).show();
+			}
+
+			FileOutputStream fileOutputStream = new FileOutputStream(filePath);
+			workbook.write(fileOutputStream);
+
+			if(fileOutputStream!=null){
+				fileOutputStream.flush();
+				fileOutputStream.close();
+			}
+
+		}
+		catch (Exception e){
+			e.printStackTrace();
+		}
+
+
+
+
 	}
 }
 	

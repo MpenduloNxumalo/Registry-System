@@ -18,44 +18,38 @@
 package com.example.registrysystem;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
 
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import exportkit.figma.R;
-
 	public class homescreen_activity extends Activity {
 
-	
-	private View _bg__homescreen_ek2;
-	private ImageView rectangle_1;
-	private ImageView rectangle_2;
-	private ImageView vector;
-	private TextView facerapp;
-	private TextView clocking_list;
-	private ImageView rectangle_4;
-	private View rectangle_3;
-	private TextView create_new_register;
+	private Button createNewRegister,clocking_list;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.homescreen);
+		createNewRegister = findViewById(R.id.createregister);
+		clocking_list = findViewById(R.id.clockinglist);
+
+		createNewRegister.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				Intent intent = new Intent(getApplicationContext(),createregisterscreen_activity.class);
+				startActivity(intent);
+			}
+		});
 
 		
-		_bg__homescreen_ek2 = (View) findViewById(R.id._bg__homescreen_ek2);
-		rectangle_1 = (ImageView) findViewById(R.id.rectangle_1);
-		rectangle_2 = (ImageView) findViewById(R.id.rectangle_2);
-		vector = (ImageView) findViewById(R.id.vector);
-		facerapp = (TextView) findViewById(R.id.facerapp);
-		clocking_list = (TextView) findViewById(R.id.clocking_list);
-		rectangle_4 = (ImageView) findViewById(R.id.rectangle_4);
-		rectangle_3 = (View) findViewById(R.id.rectangle_3);
-		create_new_register = (TextView) findViewById(R.id.create_new_register);
+
+
 	
 		
 		//custom code goes here

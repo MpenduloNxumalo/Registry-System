@@ -18,49 +18,66 @@
 package com.example.registrysystem;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
 
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 public class createregisterscreen_activity extends Activity {
 
-	
-	private View _bg__createregisterscreen_ek2;
-	private ImageView vector_ek6;
-	private View rectangle_5;
-	private View rectangle_6;
-	private ImageView xmlid_225_;
-	private ImageView xmlid_225__ek1;
-	private TextView choose_grade;
-	private TextView choose_class_name;
-	private TextView grade;
-	private TextView class_name;
-	private View rectangle_3_ek1;
-	private TextView create_register;
-
+	private ImageView logo;
+	private Spinner gradeSpinner;
+	private Spinner classLetterSpinner;
+	private ArrayAdapter<CharSequence>gradesAdapter;
+	private ArrayAdapter<CharSequence>classLetterAdapter;
+	public Button createRegister;
+	public String Grade;
+	public String ClassLetter;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.createregisterscreen);
+		gradeSpinner = findViewById(R.id.grade_spinner);
+		classLetterSpinner = findViewById(R.id.class_letter_spinner);
+		logo = (ImageView) findViewById(R.id.vector_ek6);
 
-		
-		_bg__createregisterscreen_ek2 = (View) findViewById(R.id._bg__createregisterscreen_ek2);
-		vector_ek6 = (ImageView) findViewById(R.id.vector_ek6);
-		rectangle_5 = (View) findViewById(R.id.rectangle_5);
-		rectangle_6 = (View) findViewById(R.id.rectangle_6);
-		xmlid_225_ = (ImageView) findViewById(R.id.xmlid_225_);
-		xmlid_225__ek1 = (ImageView) findViewById(R.id.xmlid_225__ek1);
-		choose_grade = (TextView) findViewById(R.id.choose_grade);
-		choose_class_name = (TextView) findViewById(R.id.choose_class_name);
-		grade = (TextView) findViewById(R.id.grade);
-		class_name = (TextView) findViewById(R.id.class_name);
-		rectangle_3_ek1 = (View) findViewById(R.id.rectangle_3_ek1);
-		create_register = (TextView) findViewById(R.id.create_register);
-	
+
+		gradesAdapter = ArrayAdapter.createFromResource(this, R.array.grades, android.R.layout.simple_spinner_item);
+		gradesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+		gradeSpinner.setAdapter(gradesAdapter);
+
+
+		classLetterAdapter = ArrayAdapter.createFromResource(this, R.array.class_letter, android.R.layout.simple_spinner_item);
+		classLetterAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+		classLetterSpinner.setAdapter(classLetterAdapter);
+
+
+
+
+
+
+		createRegister = findViewById(R.id.createregister);
+		createRegister.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				Grade = gradeSpinner.getSelectedItem().toString();
+				ClassLetter = classLetterSpinner.getSelectedItem().toString();
+				Intent intent = new Intent(getApplicationContext(),createregister2screen_activity.class);
+				intent.putExtra("grade",Grade);
+				intent.putExtra("class",ClassLetter);
+				startActivity(intent);
+			}
+		});
+
+
+
 		
 		//custom code goes here
 	

@@ -65,4 +65,37 @@
 	<string name="export_report_string">Export Report</string>
 	<string name="done_string">Done</string>
 	<string name="report_successfully_exported_string">Report successfully exported</string>
+
+	<string-array name="grades">
+		<item>8</item>
+		<item>9</item>
+		<item>10</item>
+		<item>11</item>
+		<item>12</item>
+	</string-array>
+	<string-array name="class_letter">
+		<item>A</item>
+		<item>B</item>
+		<item>C</item>
+		<item>D</item>
+		<item>E</item>
+	</string-array>
+
+	<string-array name="Name">
+		<item>Mpendulo</item>
+		<item>Jabulani</item>
+		<item>Herman</item>
+		<item>Thami</item>
+		<item>Steve</item>
+	</string-array>
+
+	<string-array name="Surname">
+		<item>Nxumalo</item>
+		<item>Maseko</item>
+		<item>Maseko</item>
+		<item>Buthelezi</item>
+		<item>Sephiri</item>
+	</string-array>
+
+
 </resources>

@@ -4,15 +4,23 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/btnradius.xml" value="0.205" />
+        <entry key="app/src/main/res/drawable/cardstyle.xml" value="0.265" />
+        <entry key="app/src/main/res/drawable/spinner_bg.xml" value="0.2095" />
         <entry key="app/src/main/res/drawable/strokebtn.xml" value="0.206" />
+        <entry key="app/src/main/res/drawable/strokebtnblue.xml" value="0.262" />
         <entry key="app/src/main/res/font/font.xml" value="0.22760416666666666" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.13949275362318841" />
         <entry key="app/src/main/res/layout/clockinlistscreen.xml" value="0.13949275362318841" />
-        <entry key="app/src/main/res/layout/homescreen.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/createregister2screen.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/createregisterscreen.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/donescreen.xml" value="0.2609375" />
+        <entry key="app/src/main/res/layout/exportscreen.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/homescreen.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/my_row.xml" value="0.33" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

@@ -42,13 +42,10 @@ public class exportscreen_activity extends Activity {
 		setContentView(R.layout.exportscreen);
 
 		
-		_bg__exportscreen_ek2 = (View) findViewById(R.id._bg__exportscreen_ek2);
+
 		vector_ek8 = (ImageView) findViewById(R.id.vector_ek8);
-		rectangle_3_ek3 = (View) findViewById(R.id.rectangle_3_ek3);
-		export_report = (TextView) findViewById(R.id.export_report);
-		rectangle_7_ek1 = (View) findViewById(R.id.rectangle_7_ek1);
-		f6188_school_attendance_register_inside_form_rbe_1 = (ImageView) findViewById(R.id.f6188_school_attendance_register_inside_form_rbe_1);
-	
+
+
 		
 		//custom code goes here
 	

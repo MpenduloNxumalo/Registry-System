@@ -1,203 +1,94 @@
-<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
-	android:layout_width="match_parent" android:layout_height="wrap_content" >
-	<!-- 
-	/*
-	 *	This content is generated from the API File Info.
-	 *	(Alt+Shift+Ctrl+I).
-	 *
-	 *	@desc 		
-	 *	@file 		homescreen
-	 *	@date 		Sunday 17th of July 2022 09:16:15 AM
-	 *	@title 		Client Screens
-	 *	@author 	
-	 *	@keywords 	
-	 *	@generator 	Export Kit v1.3.figma
-	 *
-	 */
-	-->
-	<ScrollView android:id="@+id/createregisterscreen" 
-		android:layout_width="wrap_content" 
-		android:layout_height="match_parent" >
-
-		<RelativeLayout android:id="@+id/content_container" 
-			android:layout_width="wrap_content" 
-			android:layout_height="wrap_content" >
+<androidx.constraintlayout.widget.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/horizontalScrollView2"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
 
 
+	<ImageView
+		android:id="@+id/vector_ek6"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="20dp"
+		android:contentDescription="vector_ek6"
+		android:src="@drawable/vector_ek6"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		tools:layout_conversion_absoluteHeight="48dp"
+		tools:layout_conversion_absoluteWidth="49dp" />
 
-			<RelativeLayout android:id="@+id/page_createregisterscreen_ek1"
-				android:layout_marginTop="0dp"
-				android:layout_marginStart="0dp"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				>
+	<Spinner
+		android:id="@+id/grade_spinner"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:padding="10dp"
+		android:fontFamily="@font/montserrat_variablefont_wght"
+		android:layout_marginStart="20dp"
+		android:layout_marginTop="10dp"
+		android:layout_marginEnd="20dp"
+		android:background="@drawable/spinner_bg"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-				<View   android:id="@+id/_bg__createregisterscreen_ek2"
-					android:background="@drawable/_bg__createregisterscreen_ek2_shape"
-					 android:layout_marginStart="0dp"
-					android:layout_marginTop="0dp"
-					android:layout_width="375dp"
-					android:layout_height="812dp" />
+	<Spinner
+		android:id="@+id/class_letter_spinner"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="20dp"
+		android:layout_marginTop="10dp"
+		android:layout_marginEnd="20dp"
+		android:background="@drawable/spinner_bg"
+		android:fontFamily="@font/montserrat_variablefont_wght"
+		android:padding="10dp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="1.0"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/textView" />
 
+	<TextView
+		android:id="@+id/textView2"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="20dp"
+		android:layout_marginTop="50dp"
+		android:text="Grade"
+		android:textColor="#08A1F6"
+		android:fontFamily="@font/montserrat_variablefont_wght"
+		android:textFontWeight="900"
+		android:textSize="25sp"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/vector_ek6" />
 
-				<RelativeLayout android:id="@+id/frame_1_ek2"
-					android:layout_marginTop="40dp"
-					android:layout_marginStart="163dp"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					>
+	<TextView
+		android:id="@+id/textView"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="20dp"
+		android:layout_marginTop="30dp"
+		android:fontFamily="@font/montserrat_variablefont_wght"
+		android:text="Class letter"
+		android:textColor="#08A1F6"
+		android:textFontWeight="900"
+		android:textSize="25sp"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/grade_spinner" />
 
-					<ImageView android:id="@+id/vector_ek6"
-						android:src="@drawable/vector_ek6"
-						android:contentDescription="vector_ek6"
-						 android:layout_marginStart="0dp"
-						android:layout_marginTop="0dp"
-						android:layout_width="49dp"
-						android:layout_height="48dp" />
-
-				</RelativeLayout>
-
-				<View   android:id="@+id/rectangle_5"
-					android:background="@drawable/rectangle_5_shape"
-					 android:layout_marginStart="18dp"
-					android:layout_marginTop="180dp"
-					android:layout_width="342dp"
-					android:layout_height="41dp" />
-
-				<View   android:id="@+id/rectangle_6"
-					android:background="@drawable/rectangle_6_shape"
-					 android:layout_marginStart="18dp"
-					android:layout_marginTop="267dp"
-					android:layout_width="342dp"
-					android:layout_height="41dp" />
-
-
-				<RelativeLayout android:id="@+id/down_arrow_svgrepo_com_1"
-					android:layout_marginTop="189dp"
-					android:layout_marginStart="328dp"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					>
-
-					<ImageView android:id="@+id/xmlid_225_"
-						android:src="@drawable/xmlid_225_"
-						android:contentDescription="xmlid_225_"
-						 android:layout_marginStart="0dp"
-						android:layout_marginTop="4.55dp"
-						android:layout_width="20dp"
-						android:layout_height="10.91dp" />
-
-				</RelativeLayout>
-
-
-				<RelativeLayout android:id="@+id/down_arrow_svgrepo_com_2"
-					android:layout_marginTop="276dp"
-					android:layout_marginStart="329dp"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					>
-
-					<ImageView android:id="@+id/xmlid_225__ek1"
-						android:src="@drawable/xmlid_225__ek1"
-						android:contentDescription="xmlid_225__ek1"
-						 android:layout_marginStart="0dp"
-						android:layout_marginTop="4.55dp"
-						android:layout_width="20dp"
-						android:layout_height="10.91dp" />
-
-				</RelativeLayout>
-
-				<TextView android:id="@+id/choose_grade"
-					android:fontFamily="Montserrat Alternates"
-					android:textStyle="bold"
-					android:layout_gravity="center_horizontal|center"
-					android:gravity="center"
-					android:textSize="20sp"
-					android:textColor="@color/choose_grade_color"
-					android:layout_marginLeft="26dp"
-					android:layout_marginTop="187dp"
-					android:layout_width="159dp"
-					android:layout_height="38dp"
-					android:text="@string/choose_grade_string"
-					 />
-
-				<TextView android:id="@+id/choose_class_name"
-					android:fontFamily="Montserrat Alternates"
-					android:textStyle="bold"
-					android:layout_gravity="center_horizontal|center"
-					android:gravity="center"
-					android:textSize="20sp"
-					android:textColor="@color/choose_grade_color"
-					android:layout_marginLeft="26dp"
-					android:layout_marginTop="274dp"
-					android:layout_width="217dp"
-					android:layout_height="38dp"
-					android:text="@string/choose_class_name_string"
-					 />
-
-				<TextView android:id="@+id/grade"
-					android:fontFamily="Montserrat Alternates"
-					android:textStyle="bold"
-					android:layout_gravity="center_horizontal|center"
-					android:gravity="center"
-					android:textSize="20sp"
-					android:textColor="@color/_bg__clockinlistscreen_ek2_color"
-					android:layout_marginLeft="14dp"
-					android:layout_marginTop="144dp"
-					android:layout_width="80dp"
-					android:layout_height="38dp"
-					android:text="@string/grade_string"
-					 />
-
-				<TextView android:id="@+id/class_name"
-					android:fontFamily="Montserrat Alternates"
-					android:textStyle="bold"
-					android:layout_gravity="center_horizontal|center"
-					android:gravity="center"
-					android:textSize="20sp"
-					android:textColor="@color/_bg__clockinlistscreen_ek2_color"
-					android:layout_marginLeft="12dp"
-					android:layout_marginTop="230dp"
-					android:layout_width="141dp"
-					android:layout_height="38dp"
-					android:text="@string/class_name_string"
-					 />
+	<Button
+		android:id="@+id/createregister"
+		style="@style/BtnStyle"
+		android:background="@drawable/strokebtnblue"
+		android:textColor="#08A1F6"
+		android:textFontWeight="900"
+		android:layout_marginBottom="100dp"
+		android:text="Create register"
+		android:elevation="20dp"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent" />
 
 
-				<RelativeLayout android:id="@+id/my_button_ek1"
-					android:layout_marginTop="614dp"
-					android:layout_marginStart="29dp"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					>
-
-					<View   android:id="@+id/rectangle_3_ek1"
-						android:background="@drawable/rectangle_3_ek1_shape"
-						 android:layout_marginStart="0dp"
-						android:layout_marginTop="0dp"
-						android:layout_width="308dp"
-						android:layout_height="56dp" />
-
-					<TextView android:id="@+id/create_register"
-						android:fontFamily="Montserrat"
-						android:textStyle="bold"
-						android:layout_gravity="center_horizontal|center"
-						android:gravity="center"
-						android:textSize="20sp"
-						android:textColor="@color/create_new_register_color"
-						android:layout_marginLeft="53dp"
-						android:layout_marginTop="15dp"
-						android:layout_width="208dp"
-						android:layout_height="38dp"
-						android:text="@string/create_register_string"
-						 />
-
-				</RelativeLayout>
-
-			</RelativeLayout>
-
-
-		</RelativeLayout>
-
-	</ScrollView>
-</HorizontalScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

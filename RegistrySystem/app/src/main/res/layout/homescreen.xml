@@ -7,6 +7,7 @@
 	android:layout_height="match_parent"
 		>
 
+
 	<ImageView
 		android:id="@+id/rectangle_1"
 		android:layout_width="468dp"
@@ -15,19 +16,21 @@
 		android:src="@drawable/rectangle_1"
 		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.508"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toTopOf="parent" />
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintVertical_bias="0.81" />
 
 	<ImageView
 		android:id="@+id/rectangle_2"
 		android:layout_width="429dp"
 		android:layout_height="596dp"
+		android:layout_marginTop="30dp"
 		android:contentDescription="rectangle_2"
 		android:src="@drawable/rectangle_2"
-		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintStart_toStartOf="parent" />
-
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/vector" />
 
 	<ImageView
 		android:id="@+id/vector"
@@ -41,7 +44,7 @@
 		app:layout_constraintTop_toTopOf="parent" />
 
 	<TextView
-		android:id="@+id/textView"
+		android:id="@+id/title"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:layout_marginStart="100dp"
@@ -57,7 +60,7 @@
 		app:layout_constraintTop_toBottomOf="@+id/vector" />
 
 	<Button
-		android:id="@+id/button"
+		android:id="@+id/clockinglist"
 		style="@style/BtnStyle"
 		android:textColor="#FFF"
 		android:layout_marginBottom="60dp"
@@ -68,13 +71,13 @@
 		app:layout_constraintStart_toStartOf="parent" />
 
 	<Button
-		android:id="@+id/button2"
+		android:id="@+id/createregister"
 		style="@style/BtnStyle"
 		android:text="Create Register"
 		android:textColor="#08A1F6"
 		android:textFontWeight="900"
 		android:background="@drawable/btnradius"
-		app:layout_constraintBottom_toTopOf="@+id/button"
+		app:layout_constraintBottom_toTopOf="@+id/clockinglist"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent" />
 
