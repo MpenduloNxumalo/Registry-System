@@ -118,13 +118,20 @@ import utils.RegistryAdapter;
 		HSSFWorkbook workbook = new HSSFWorkbook();
 		HSSFSheet sheet =  workbook.createSheet();
 
-		for(int i = 0;i < 2;i++){
-			for(int j = 0;j < Name.length;j++){
-				HSSFRow row = sheet.createRow(i);
+		for(int i = 0;i < Name.length;i++){
+			HSSFRow row = sheet.createRow(i);
+
+
+
+			for(int j = 0;j < 2;j++){
+
 				HSSFCell cell = row.createCell(j);
 
 
-				if(i == 0){
+
+
+
+				if(j == 0){
 					cell.setCellValue(Name[j]);
 				}
 				else{
