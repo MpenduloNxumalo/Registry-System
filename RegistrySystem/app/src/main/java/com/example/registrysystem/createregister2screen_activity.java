@@ -117,11 +117,14 @@ import utils.RegistryAdapter;
 	public void buttonCreateExcel(View view){
 		HSSFWorkbook workbook = new HSSFWorkbook();
 		HSSFSheet sheet =  workbook.createSheet();
+		HSSFRow r = sheet.createRow(0);
+		HSSFCell c_1 = r.createCell(0);
+		HSSFCell c_2 = r.createCell(1);
+		c_1.setCellValue("Name");
+		c_2.setCellValue("Surname");
 
-		for(int i = 0;i < Name.length;i++){
+		for(int i = 1;i <= Name.length;i++){
 			HSSFRow row = sheet.createRow(i);
-
-
 
 			for(int j = 0;j < 2;j++){
 
@@ -132,10 +135,10 @@ import utils.RegistryAdapter;
 
 
 				if(j == 0){
-					cell.setCellValue(Name[j]);
+					cell.setCellValue(Name[i-1]);
 				}
 				else{
-					cell.setCellValue(Surname[j]);
+					cell.setCellValue(Surname[i-1]);
 				}
 
 			}
@@ -147,7 +150,7 @@ import utils.RegistryAdapter;
 		try{
 			if(!filePath.exists()){
 				filePath.createNewFile();
-				Toast.makeText(getApplicationContext(),"file",Toast.LENGTH_SHORT).show();
+				//Toast.makeText(getApplicationContext(),"file",Toast.LENGTH_SHORT).show();
 			}
 
 			FileOutputStream fileOutputStream = new FileOutputStream(filePath);
