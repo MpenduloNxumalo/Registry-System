@@ -18,6 +18,7 @@
 package com.example.registrysystem.ClientScreens;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -27,6 +28,7 @@ import android.os.Bundle;
 
 import android.os.Environment;
 import android.os.Handler;
+import android.os.Message;
 import android.provider.Telephony;
 import android.view.View;
 import android.widget.Button;
@@ -34,6 +36,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -69,10 +72,10 @@ import utils.RegistryAdapter;
 
 	RecyclerView registerRecyclerView;
 
-	String s = Environment.getExternalStorageDirectory() + "";
-	LocalDate date;
+	String s = Environment.getExternalStorageDirectory() + "/A.xls";
 
-		private File filePath = new File(s);
+
+	private File filePath = new File(s);
 
 
 	@Override
@@ -93,9 +96,11 @@ import utils.RegistryAdapter;
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
 		String strDate = dateFormat.format(date);
 
-		String d = strDate +":"+grade+Class+".xls";
+		String d = strDate +" "+grade+Class+".xls";
 
-		s = s +"/"+d;
+
+
+
 
 
 		classRegisterName = findViewById(R.id.register_name);
@@ -117,10 +122,31 @@ import utils.RegistryAdapter;
 			@Override
 			public void onClick(View view) {
 				Toast.makeText(getApplicationContext(),"Generating report",Toast.LENGTH_SHORT).show();
-				writeExcel(view);
-				Intent intent1 = new Intent(getApplicationContext(), donescreen_activity.class);
-				startActivity(intent1);
-				Toast.makeText(getApplicationContext(),"Report Generated",Toast.LENGTH_LONG).show();
+
+
+				@SuppressLint("HandlerLeak") Handler handler = new Handler(){
+
+					@Override
+					public void handleMessage(@NonNull Message msg) {
+						super.handleMessage(msg);
+						Toast.makeText(getApplicationContext(),"Report Generated",Toast.LENGTH_LONG).show();
+						Intent intent1 = new Intent(getApplicationContext(), donescreen_activity.class);
+						startActivity(intent1);
+
+
+					}
+				};
+
+				Runnable runnable = new Runnable() {
+					@Override
+					public void run() {
+						writeExcel(view);
+						handler.sendEmptyMessage(0);
+					}
+				};
+
+				Thread thread = new Thread(runnable);
+				thread.start();
 			}
 		});
 
@@ -157,7 +183,6 @@ import utils.RegistryAdapter;
 
 
 			try{
-				Toast.makeText(getApplicationContext(),s,Toast.LENGTH_LONG).show();
 				if(!filePath.exists()){
 					filePath.createNewFile();
 
@@ -177,6 +202,7 @@ import utils.RegistryAdapter;
 			catch (Exception e){
 				e.printStackTrace();
 			}
+
 		}
 	}
 

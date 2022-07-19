@@ -18,6 +18,7 @@
 package com.example.registrysystem.ClientScreens;
 
 import android.app.Activity;
+import android.content.ClipData;
 import android.os.Bundle;
 
 
@@ -30,6 +31,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.registrysystem.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import utils.RegistryAdapter;
 
@@ -62,6 +66,7 @@ public class clockinlistscreen_activity extends Activity {
 
 	
 		searchBar = findViewById(R.id.searchView);
+		searchBar.clearFocus();
 		searchBar.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
 			@Override
 			public boolean onQueryTextSubmit(String s) {
@@ -70,7 +75,12 @@ public class clockinlistscreen_activity extends Activity {
 
 			@Override
 			public boolean onQueryTextChange(String s) {
-				return false;
+				filterList(s);
+				return true;
+			}
+
+			private void filterList(String s) {
+				List<String> filteredList = new ArrayList<>();
 			}
 		});
 		//custom code goes here
