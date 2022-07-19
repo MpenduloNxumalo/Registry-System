@@ -1,116 +1,76 @@
-<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
-	android:layout_width="match_parent" android:layout_height="wrap_content" >
-	<!-- 
-	/*
-	 *	This content is generated from the API File Info.
-	 *	(Alt+Shift+Ctrl+I).
-	 *
-	 *	@desc 		
-	 *	@file 		homescreen
-	 *	@date 		Sunday 17th of July 2022 09:16:15 AM
-	 *	@title 		Client Screens
-	 *	@author 	
-	 *	@keywords 	
-	 *	@generator 	Export Kit v1.3.figma
-	 *
-	 */
-	-->
-	<ScrollView android:id="@+id/donescreen" 
-		android:layout_width="wrap_content" 
-		android:layout_height="match_parent" >
-
-		<RelativeLayout android:id="@+id/content_container" 
-			android:layout_width="wrap_content" 
-			android:layout_height="wrap_content" >
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/horizontalScrollView5"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	<!--
+    /*
+     *	This content is generated from the API File Info.
+     *	(Alt+Shift+Ctrl+I).
+     *
+     *	@desc
+     *	@file 		homescreen
+     *	@date 		Sunday 17th of July 2022 09:16:15 AM
+     *	@title 		Client Screens
+     *	@author
+     *	@keywords
+     *	@generator 	Export Kit v1.3.figma
+     *
+     */
+    -->
 
 
+	<ImageView
+		android:id="@+id/vector_ek9"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="20dp"
+		android:contentDescription="vector_ek9"
+		android:src="@drawable/vector_ek9"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<ImageView
+		android:id="@+id/vector_ek10"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="50dp"
+		android:contentDescription="vector_ek10"
+		android:src="@drawable/vector_ek10"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/vector_ek9" />
+
+	<TextView
+		android:id="@+id/textView4"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="20dp"
+		android:layout_marginTop="80dp"
+		android:layout_marginEnd="20dp"
+		android:fontFamily="@font/montserrat_variablefont_wght"
+		android:gravity="center"
+		android:textStyle="bold"
+		android:textFontWeight="800"
+		android:textColor="#7DCBF6"
+		android:text="Report successfully generated and exported"
+		android:textSize="24sp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/vector_ek10" />
+
+	<Button
+		android:id="@+id/donebtn"
+		android:layout_marginBottom="50dp"
+		style="@style/BtnStyle"
+		android:background="@drawable/strokebtnblue"
+		android:text="Done"
+		android:textColor="#08A0F5"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent" />
 
 
-
-			<RelativeLayout android:id="@+id/page_donescreen_ek1"
-				android:layout_marginTop="0dp"
-				android:layout_marginStart="0dp"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				>
-
-
-				<ImageView
-					android:id="@+id/vector_ek9"
-					android:layout_width="49dp"
-					android:layout_height="48dp"
-					android:layout_marginStart="0dp"
-					android:layout_marginTop="0dp"
-					android:contentDescription="vector_ek9"
-					android:src="@drawable/vector_ek9" />
-
-
-				<RelativeLayout android:id="@+id/my_button_ek4"
-					android:layout_marginTop="614dp"
-					android:layout_marginStart="29dp"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					>
-
-					<View
-						android:id="@+id/rectangle_3_ek4"
-						android:layout_width="308dp"
-						android:layout_height="56dp"
-						android:layout_marginStart="0dp"
-						android:layout_marginTop="0dp"
-						android:background="@drawable/rectangle_3_ek4_shape" />
-
-					<TextView android:id="@+id/done"
-						android:fontFamily="Montserrat"
-						android:textStyle="bold"
-						android:layout_gravity="center_horizontal|center"
-						android:gravity="center"
-						android:textSize="20sp"
-						android:textColor="@color/create_new_register_color"
-						android:layout_marginLeft="122dp"
-						android:layout_marginTop="15dp"
-						android:layout_width="72dp"
-						android:layout_height="38dp"
-						android:text="@string/done_string"
-						 />
-
-				</RelativeLayout>
-
-
-				<RelativeLayout android:id="@+id/tick_svgrepo_com_1"
-					android:layout_marginTop="127dp"
-					android:layout_marginStart="58dp"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					>
-
-					<ImageView
-						android:id="@+id/vector_ek10"
-						android:layout_width="245dp"
-						android:layout_height="216.67dp"
-						android:layout_marginStart="0dp"
-						android:layout_marginTop="14.16dp"
-						android:contentDescription="vector_ek10"
-						android:src="@drawable/vector_ek10" />
-
-				</RelativeLayout>
-
-				<TextView android:id="@+id/report_successfully_exported"
-					android:fontFamily="Montserrat"
-					android:textStyle="bold"
-					android:layout_gravity="center_horizontal|center"
-					android:gravity="center"
-					android:textSize="20sp"
-					android:textColor="@color/report_successfully_exported_color"
-					android:layout_marginLeft="30dp"
-					android:layout_marginTop="456dp"
-					android:layout_width="324dp"
-					android:layout_height="41dp"
-					android:text="@string/report_successfully_exported_string"
-					 />
-
-			</RelativeLayout>
-		</RelativeLayout>
-
-	</ScrollView>
-</HorizontalScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,7 +15,7 @@
 	 */
 	
 
-package com.example.registrysystem;
+package com.example.registrysystem.ClientScreens;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -27,9 +27,11 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
-import android.widget.TextView;
 
-public class createregisterscreen_activity extends Activity {
+import com.example.registrysystem.ClientScreens.createregister2screen_activity;
+import com.example.registrysystem.R;
+
+	public class createregisterscreen_activity extends Activity {
 
 	private ImageView logo;
 	private Spinner gradeSpinner;
@@ -69,7 +71,7 @@ public class createregisterscreen_activity extends Activity {
 			public void onClick(View view) {
 				Grade = gradeSpinner.getSelectedItem().toString();
 				ClassLetter = classLetterSpinner.getSelectedItem().toString();
-				Intent intent = new Intent(getApplicationContext(),createregister2screen_activity.class);
+				Intent intent = new Intent(getApplicationContext(), createregister2screen_activity.class);
 				intent.putExtra("grade",Grade);
 				intent.putExtra("class",ClassLetter);
 				startActivity(intent);

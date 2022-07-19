@@ -10,7 +10,7 @@
 		android:theme="@style/AppTheme"
 		android:label="@string/app_name" >
 		<activity
-		android:name=".homescreen_activity"
+		android:name=".ClientScreens.homescreen_activity"
 		android:configChanges="orientation|keyboardHidden|screenSize"
 		android:label="@string/app_name"
 		android:exported="true"  >
@@ -20,11 +20,11 @@
 			</intent-filter>
 		</activity>
 
-			<activity android:name="com.example.registrysystem.clockinlistscreen_activity"></activity>
-			<activity android:name="com.example.registrysystem.createregisterscreen_activity"></activity>
-			<activity android:name="com.example.registrysystem.createregister2screen_activity"></activity>
-			<activity android:name="com.example.registrysystem.exportscreen_activity"></activity>
-			<activity android:name="com.example.registrysystem.donescreen_activity"></activity>
+			<activity android:name="com.example.registrysystem.ClientScreens.clockinlistscreen_activity"></activity>
+			<activity android:name="com.example.registrysystem.ClientScreens.createregisterscreen_activity"></activity>
+			<activity android:name="com.example.registrysystem.ClientScreens.createregister2screen_activity"></activity>
+			<activity android:name="com.example.registrysystem.AdminScreens.exportscreen_activity"></activity>
+			<activity android:name="com.example.registrysystem.ClientScreens.donescreen_activity"></activity>
 	</application>
 
 </manifest>

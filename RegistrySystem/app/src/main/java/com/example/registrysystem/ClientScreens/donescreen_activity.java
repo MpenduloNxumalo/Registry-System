@@ -15,7 +15,7 @@
 	 */
 	
 
-package com.example.registrysystem;
+package com.example.registrysystem.ClientScreens;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -27,31 +27,34 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-	public class homescreen_activity extends Activity {
+import com.example.registrysystem.R;
 
-	private Button createNewRegister,clocking_list;
+    public class donescreen_activity extends Activity {
+
+
+	private ImageView vector_ek9;
+	private ImageView vector_ek10;
+	Button done;
+
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.homescreen);
-		createNewRegister = findViewById(R.id.createregister);
-		clocking_list = findViewById(R.id.clockinglist);
+		setContentView(R.layout.donescreen);
 
-		createNewRegister.setOnClickListener(new View.OnClickListener() {
+		vector_ek9 = (ImageView) findViewById(R.id.vector_ek9);
+		vector_ek10 = (ImageView) findViewById(R.id.vector_ek10);
+		done = findViewById(R.id.donebtn);
+
+		done.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				Intent intent = new Intent(getApplicationContext(),createregisterscreen_activity.class);
-				startActivity(intent);
-			}
+				Intent intent = new Intent(getApplicationContext(), homescreen_activity.class);
+				intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+				startActivity(intent);			}
 		});
 
-		
-
-
-	
-		
 		//custom code goes here
 	
 	}

@@ -15,16 +15,19 @@
 	 */
 	
 
-package com.example.registrysystem;
+package com.example.registrysystem.ClientScreens;
 
 import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.os.Bundle;
 
 
 import android.os.Environment;
+import android.os.Handler;
+import android.provider.Telephony;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -35,6 +38,9 @@ import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.registrysystem.AdminScreens.exportscreen_activity;
+import com.example.registrysystem.R;
+
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
@@ -42,6 +48,11 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Calendar;
+import java.util.Date;
 
 import utils.RegistryAdapter;
 
@@ -58,9 +69,10 @@ import utils.RegistryAdapter;
 
 	RecyclerView registerRecyclerView;
 
-	String s = Environment.getExternalStorageDirectory() + "/A.xls";
+	String s = Environment.getExternalStorageDirectory() + "";
+	LocalDate date;
 
-	private File filePath = new File(s);
+		private File filePath = new File(s);
 
 
 	@Override
@@ -77,6 +89,14 @@ import utils.RegistryAdapter;
 
 		grade = intent.getStringExtra("grade");
 		Class = intent.getStringExtra("class");
+		Date date = Calendar.getInstance().getTime();
+		DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
+		String strDate = dateFormat.format(date);
+
+		String d = strDate +":"+grade+Class+".xls";
+
+		s = s +"/"+d;
+
 
 		classRegisterName = findViewById(R.id.register_name);
 
@@ -96,80 +116,69 @@ import utils.RegistryAdapter;
 		generateReport.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				Toast.makeText(getApplicationContext(),s,Toast.LENGTH_LONG).show();
-				buttonCreateExcel(view);
+				Toast.makeText(getApplicationContext(),"Generating report",Toast.LENGTH_SHORT).show();
+				writeExcel(view);
+				Intent intent1 = new Intent(getApplicationContext(), donescreen_activity.class);
+				startActivity(intent1);
 				Toast.makeText(getApplicationContext(),"Report Generated",Toast.LENGTH_LONG).show();
 			}
 		});
 
-
-
-
-
-
-
-	
-		
 		//custom code goes here
-	
 	}
 
-	public void buttonCreateExcel(View view){
-		HSSFWorkbook workbook = new HSSFWorkbook();
-		HSSFSheet sheet =  workbook.createSheet();
-		HSSFRow r = sheet.createRow(0);
-		HSSFCell c_1 = r.createCell(0);
-		HSSFCell c_2 = r.createCell(1);
-		c_1.setCellValue("Name");
-		c_2.setCellValue("Surname");
 
-		for(int i = 1;i <= Name.length;i++){
-			HSSFRow row = sheet.createRow(i);
+	public void writeExcel(View view){
+			HSSFWorkbook workbook = new HSSFWorkbook();
+			HSSFSheet sheet =  workbook.createSheet();
+			HSSFRow r = sheet.createRow(0);
+			HSSFCell c_1 = r.createCell(0);
+			HSSFCell c_2 = r.createCell(1);
+			c_1.setCellValue("Name");
+			c_2.setCellValue("Surname");
 
-			for(int j = 0;j < 2;j++){
+			for(int i = 1;i <= Name.length;i++){
+				HSSFRow row = sheet.createRow(i);
 
-				HSSFCell cell = row.createCell(j);
+				for(int j = 0;j < 2;j++){
 
+					HSSFCell cell = row.createCell(j);
+					if(j == 0){
+						cell.setCellValue(Name[i-1]);
+					}
+					else{
+						cell.setCellValue(Surname[i-1]);
+					}
 
-
-
-
-				if(j == 0){
-					cell.setCellValue(Name[i-1]);
 				}
-				else{
-					cell.setCellValue(Surname[i-1]);
+			}
+
+
+
+
+			try{
+				Toast.makeText(getApplicationContext(),s,Toast.LENGTH_LONG).show();
+				if(!filePath.exists()){
+					filePath.createNewFile();
+
+					//Toast.makeText(getApplicationContext(),"file",Toast.LENGTH_SHORT).show();
+				}
+
+				FileOutputStream fileOutputStream = new FileOutputStream(filePath);
+
+				workbook.write(fileOutputStream);
+
+				if(fileOutputStream!=null){
+					fileOutputStream.flush();
+					fileOutputStream.close();
 				}
 
 			}
-		}
-
-
-
-
-		try{
-			if(!filePath.exists()){
-				filePath.createNewFile();
-				//Toast.makeText(getApplicationContext(),"file",Toast.LENGTH_SHORT).show();
+			catch (Exception e){
+				e.printStackTrace();
 			}
-
-			FileOutputStream fileOutputStream = new FileOutputStream(filePath);
-			workbook.write(fileOutputStream);
-
-			if(fileOutputStream!=null){
-				fileOutputStream.flush();
-				fileOutputStream.close();
-			}
-
 		}
-		catch (Exception e){
-			e.printStackTrace();
-		}
-
-
-
-
 	}
-}
+
 	
 	
