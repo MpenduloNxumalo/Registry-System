@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.registrysystem.R;
 
+import java.util.List;
+
 public class RegistryAdapter extends RecyclerView.Adapter<RegistryAdapter.MyViewHolder> {
 
     String names[], surnames[];
@@ -23,6 +25,12 @@ public class RegistryAdapter extends RecyclerView.Adapter<RegistryAdapter.MyView
         surnames = s2;
 
 
+    }
+
+    public void setFilteredList(List<String> Names, List<String> Surnames){
+        this.names = Names.toArray(new String[Names.size()]);
+        this.surnames = Surnames.toArray(new String[Surnames.size()]);
+        notifyDataSetChanged();
     }
 
     @NonNull
