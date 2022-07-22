@@ -1,0 +1,10 @@
+{
+    "_id": {
+        "$oid": "62d981e64a1964214bd38d25"
+    },
+    "STUDENT ID": "1234",
+    "NAME": "Mosima",
+    "SURNAME": "Maake",
+    "CLASS NAME": "A",
+    "GRADE": "12"
+}
