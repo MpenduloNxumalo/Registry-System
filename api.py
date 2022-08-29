@@ -1,15 +1,22 @@
-from re import S
-from turtle import st
 from flask import Flask, request,jsonify
-from flask_pymongo import PyMongo
+import pyrebase
+
 
 app = Flask(__name__)
 
-app.config["SECRET_KEY"] = 'e79648de942a6a153bb4be3409df7def8322b1ec'
-app.config["MONGO_URI"] = "mongodb+srv://MpenduloNxumalo:Dudezile1234@registry-system.1sjro.mongodb.net/?retryWrites=true&w=majority"
+firebaseConfig = {
+  "apiKey": "AIzaSyDRmFjrXTKsKmwWbH7DoKX232Tv8Ab9U54",
+  "authDomain": "registrysystem-b5d4a.firebaseapp.com",
+  "projectId": "registrysystem-b5d4a",
+  "storageBucket": "registrysystem-b5d4a.appspot.com",
+  "messagingSenderId": "960666889058",
+  "appId": "1:960666889058:web:7fb6fc98435c3ebb8a9a3b",
+  "measurementId": "G-FCEJ3Z1Q6K",
+  "databaseURL":"https://registrysystem-b5d4a-default-rtdb.firebaseio.com/"
+};
 
-mongodb_client = PyMongo(app)
-db = mongodb_client.db
+firebase=pyrebase.initialize_app(firebaseConfig)
+
 
 
 state = 0
